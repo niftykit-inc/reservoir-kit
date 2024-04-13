@@ -41,6 +41,7 @@ import { WalletClient } from 'viem'
 import getChainBlockExplorerUrl from '../../lib/getChainBlockExplorerUrl'
 import { Dialog } from '../../primitives/Dialog'
 import { TokenInfo, PaymentDetails } from '../../common'
+import { EnhancedCurrency } from '../../hooks/usePaymentTokens'
 
 type PurchaseData = {
   token?: string
@@ -89,7 +90,7 @@ type Props = Pick<Parameters<typeof Modal>['0'], 'trigger'> & {
   onPointerDownOutside?: ComponentPropsWithoutRef<
     typeof Dialog
   >['onPointerDownOutside']
-  additionalInfo?: JSX.Element
+  additionalInfo?: (paymentCurrency?: EnhancedCurrency, quantity?: number) => JSX.Element
 }
 
 export function BuyModal({
@@ -323,7 +324,7 @@ export function BuyModal({
                     />
                   </Flex>
                 )}
-                {additionalInfo}
+                {additionalInfo && additionalInfo(paymentCurrency, quantity)}
                 <Flex
                   direction="column"
                   css={{
