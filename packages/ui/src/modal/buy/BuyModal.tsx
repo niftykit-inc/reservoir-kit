@@ -89,6 +89,7 @@ type Props = Pick<Parameters<typeof Modal>['0'], 'trigger'> & {
   onPointerDownOutside?: ComponentPropsWithoutRef<
     typeof Dialog
   >['onPointerDownOutside']
+  additionalInfo?: JSX.Element
 }
 
 export function BuyModal({
@@ -111,6 +112,7 @@ export function BuyModal({
   onGoToToken,
   onPointerDownOutside,
   creditCardCheckoutButton,
+  additionalInfo,
 }: Props): ReactElement {
   const copy: typeof ModalCopy = { ...ModalCopy, ...copyOverrides }
   const [open, setOpen] = useFallbackState(
@@ -321,6 +323,7 @@ export function BuyModal({
                     />
                   </Flex>
                 )}
+                {additionalInfo}
                 <Flex
                   direction="column"
                   css={{
