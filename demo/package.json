@@ -2,7 +2,7 @@
   "private": true,
   "name": "reservoir-kit-demo",
   "scripts": {
-    "dev": "next-remote-watch ../packages/ui/dist",
+    "dev": "PORT=3001 next-remote-watch ../packages/ui/dist",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc"

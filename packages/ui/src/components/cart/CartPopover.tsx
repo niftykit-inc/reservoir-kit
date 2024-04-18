@@ -59,6 +59,7 @@ type Props = {
   openState?: [boolean, Dispatch<SetStateAction<boolean>>]
   tokenUrl?: string
   onConnectWallet: () => void
+  additionalInfo?: JSX.Element
 }
 
 const CONTENT_OFFSET = 8
@@ -69,6 +70,7 @@ export function CartPopover({
   openState,
   tokenUrl,
   onConnectWallet,
+  additionalInfo,
 }: Props): ReactElement {
   const [popoverTrigger, setPopoverTrigger] =
     useState<HTMLButtonElement | null>(null)
@@ -369,56 +371,59 @@ export function CartPopover({
                   </Flex>
                 ) : null}
                 {!isCartEmpty && (
-                  <Flex css={{ mb: 28 }}>
-                    <Text style="h6">Total</Text>
-                    <Flex
-                      direction="column"
-                      justify="center"
-                      css={{ ml: 'auto', gap: '$1', '> div': { ml: 'auto' } }}
-                    >
-                      {providerOptionsContext.preferDisplayFiatTotal &&
-                      usdPrice ? (
-                        <>
-                          <FormatCurrency
-                            amount={usdPrice * totalPrice}
-                            style="h6"
-                            color="base"
-                            css={{ textAlign: 'end' }}
-                          />
-                          <FormatCryptoCurrency
-                            textStyle="subtitle3"
-                            textColor="subtle"
-                            amount={totalPrice}
-                            address={currency?.contract}
-                            decimals={currency?.decimals}
-                            symbol={currency?.symbol}
-                            logoWidth={12}
-                            chainId={cartChain?.id}
-                          />
-                        </>
-                      ) : (
-                        <>
-                          <FormatCryptoCurrency
-                            textStyle="h6"
-                            amount={totalPrice}
-                            address={currency?.contract}
-                            decimals={currency?.decimals}
-                            symbol={currency?.symbol}
-                            logoWidth={18}
-                            chainId={cartChain?.id}
-                          />
-                          {usdPrice && (
+                  <>
+                    {additionalInfo}
+                    <Flex css={{ mb: 28 }}>
+                      <Text style="h6">You Pay</Text>
+                      <Flex
+                        direction="column"
+                        justify="center"
+                        css={{ ml: 'auto', gap: '$1', '> div': { ml: 'auto' } }}
+                      >
+                        {providerOptionsContext.preferDisplayFiatTotal &&
+                        usdPrice ? (
+                          <>
                             <FormatCurrency
                               amount={usdPrice * totalPrice}
-                              style="subtitle3"
-                              color="subtle"
+                              style="h6"
+                              color="base"
                               css={{ textAlign: 'end' }}
                             />
-                          )}
-                        </>
-                      )}
+                            <FormatCryptoCurrency
+                              textStyle="subtitle3"
+                              textColor="subtle"
+                              amount={totalPrice}
+                              address={currency?.contract}
+                              decimals={currency?.decimals}
+                              symbol={currency?.symbol}
+                              logoWidth={12}
+                              chainId={cartChain?.id}
+                            />
+                          </>
+                        ) : (
+                          <>
+                            <FormatCryptoCurrency
+                              textStyle="h6"
+                              amount={totalPrice}
+                              address={currency?.contract}
+                              decimals={currency?.decimals}
+                              symbol={currency?.symbol}
+                              logoWidth={18}
+                              chainId={cartChain?.id}
+                            />
+                            {usdPrice && (
+                              <FormatCurrency
+                                amount={usdPrice * totalPrice}
+                                style="subtitle3"
+                                color="subtle"
+                                css={{ textAlign: 'end' }}
+                              />
+                            )}
+                          </>
+                        )}
+                      </Flex>
                     </Flex>
-                  </Flex>
+                  </>
                 )}
                 <CartCheckoutModal
                   open={
