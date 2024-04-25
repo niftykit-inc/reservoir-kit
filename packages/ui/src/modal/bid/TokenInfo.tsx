@@ -127,7 +127,7 @@ const TokenInfo: FC<Props> = ({
           {floorAsk?.price ? (
             <Flex css={{ gap: '$1' }}>
               <Text style="subtitle2" color="subtle">
-                Floor Price
+                Price
               </Text>
               <FormatCryptoCurrency
                 amount={floorAsk?.price?.amount?.decimal}

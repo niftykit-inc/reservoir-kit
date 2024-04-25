@@ -462,9 +462,9 @@ export function CartPopover({
                     />
                   </Flex>
                 )}
-                {isCartEmpty && !displayPendingTransaction && (
+                {/* {isCartEmpty && !displayPendingTransaction && (
                   <Button disabled={true}>Select Items to Buy</Button>
-                )}
+                )} */}
                 {!isCartEmpty &&
                   hasValidItems &&
                   (transaction?.status === CheckoutStatus.Idle ||
