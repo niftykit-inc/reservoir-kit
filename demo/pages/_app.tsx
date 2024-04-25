@@ -45,10 +45,9 @@ const WALLET_CONNECT_PROJECT_ID =
 
   const chains = [
     allChains.mainnet,
-    allChains.goerli,
     allChains.sepolia,
     allChains.polygon,
-    allChains.polygonMumbai,
+    allChains.polygonAmoy,
     allChains.optimism,
     allChains.arbitrum,
     allChains.zora,
@@ -59,7 +58,7 @@ const WALLET_CONNECT_PROJECT_ID =
     allChains.arbitrumNova,
     allChains.berachainTestnet,
     customChains.redstone,
-    customChains.redstoneTestnet,
+    customChains.garnet,
     customChains.frameTestnet,
     customChains.astarZkEVM,
     customChains.apexPop,

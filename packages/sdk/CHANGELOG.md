@@ -1,5 +1,31 @@
 ## 1.12.15
 
+## 2.1.0
+
+### Minor Changes
+
+- 433943d: Removed deprecated chains
+
+## 2.0.16
+
+### Patch Changes
+
+- 5a6b034: Update polygon amoy wmatic address
+
+## 2.0.15
+
+### Patch Changes
+
+- b1bdf17: Handle reverted transactions by throwing an error after receiving receipt
+
+## 2.0.14
+
+### Patch Changes
+
+- 432bdbb: Add garnet and remove redstone testnet
+- 00cfcfe: Update tokens/refresh api to v2
+- ff2b661: Add polygon amoy
+
 ## 2.0.13
 
 ### Patch Changes

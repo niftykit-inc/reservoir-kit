@@ -1,5 +1,56 @@
 ## 1.25.10
 
+## 2.5.0
+
+### Minor Changes
+
+- 433943d: Removed deprecated chains
+
+### Patch Changes
+
+- Updated dependencies [433943d]
+  - @reservoir0x/reservoir-sdk@2.1.0
+
+## 2.4.11
+
+### Patch Changes
+
+- 5a6b034: Update polygon amoy wmatic address
+- Updated dependencies [5a6b034]
+  - @reservoir0x/reservoir-sdk@2.0.16
+
+## 2.4.10
+
+### Patch Changes
+
+- 8bfb69e: Fix weth address for garnet
+- Updated dependencies [b1bdf17]
+  - @reservoir0x/reservoir-sdk@2.0.15
+
+## 2.4.9
+
+### Patch Changes
+
+- 7cedee8: Rename relayer fee, fix payment tokens currency bug, fix bid modal ui getting elipsified
+
+## 2.4.8
+
+### Patch Changes
+
+- 432bdbb: Add garnet and remove redstone testnet
+- 00cfcfe: Update tokens/refresh api to v2
+- ff2b661: Add polygon amoy
+- Updated dependencies [432bdbb]
+- Updated dependencies [00cfcfe]
+- Updated dependencies [ff2b661]
+  - @reservoir0x/reservoir-sdk@2.0.14
+
+## 2.4.7
+
+### Patch Changes
+
+- 63472f2: Update berachain and redstone icon dimeinsions
+
 ## 2.4.6
 
 ### Patch Changes
